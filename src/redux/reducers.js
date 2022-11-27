@@ -1,7 +1,10 @@
-import { ADD_MOVIES } from "./actions";
+import { ADD_MOVIES, ADD_SEARCH, ADD_WIKIPEDIA, ADD_IMDB } from './actions';
 
 const initialState = {
   movieData: [],
+  search: '',
+  wikiData: [],
+  imdbData: [],
 };
 
 function apexlabstore(state = initialState, action) {
@@ -10,6 +13,21 @@ function apexlabstore(state = initialState, action) {
       return {
         ...state,
         movieData: action.data,
+      };
+    case ADD_SEARCH:
+      return {
+        ...state,
+        search: action.data,
+      };
+    case ADD_WIKIPEDIA:
+      return {
+        ...state,
+        wikiData: action.data,
+      };
+    case ADD_IMDB:
+      return {
+        ...state,
+        imdbData: action.data,
       };
 
     default:
